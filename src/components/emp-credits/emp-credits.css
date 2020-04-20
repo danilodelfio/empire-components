@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.credits-text {
+  text-align: center;
+  font-size: 10px;
+  font-family: Verdana;
+  color: white;
+}

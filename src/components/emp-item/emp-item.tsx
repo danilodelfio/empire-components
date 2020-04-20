@@ -3,21 +3,22 @@ import { Component, ComponentInterface, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'emp-item',
   styleUrl: 'emp-item.css',
-  shadow: true,
+  scoped: true,
 })
 export class EmpItem implements ComponentInterface {
 
-  @Prop() iconPosition: string;
+  @Prop() pos: string;
   @Prop() label: string;
 
   render() {
+    console.log('pos', this.pos);
     return (
       <Host>
-        <div>
-          <div class={{ 'right': this.iconPosition==='left', 'left': this.iconPosition !== 'left'}}>
+        <div class="item">
+          <div class='left'>
             <slot name="icon"></slot>
           </div>
-          <div class={{ 'left': this.iconPosition==='left', 'right': this.iconPosition !== 'left'}}>
+          <div class='right'>
             {this.label}
           </div>
         </div>

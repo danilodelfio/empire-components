@@ -6,16 +6,25 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface EmpCredits {
+        "name": string;
+    }
     interface EmpItem {
-        "iconPosition": string;
         "label": string;
+        "pos": string;
     }
     interface SideMenu {
         "avatar": string;
-        "title": string;
+        "menu": string;
     }
 }
 declare global {
+    interface HTMLEmpCreditsElement extends Components.EmpCredits, HTMLStencilElement {
+    }
+    var HTMLEmpCreditsElement: {
+        prototype: HTMLEmpCreditsElement;
+        new (): HTMLEmpCreditsElement;
+    };
     interface HTMLEmpItemElement extends Components.EmpItem, HTMLStencilElement {
     }
     var HTMLEmpItemElement: {
@@ -29,20 +38,25 @@ declare global {
         new (): HTMLSideMenuElement;
     };
     interface HTMLElementTagNameMap {
+        "emp-credits": HTMLEmpCreditsElement;
         "emp-item": HTMLEmpItemElement;
         "side-menu": HTMLSideMenuElement;
     }
 }
 declare namespace LocalJSX {
+    interface EmpCredits {
+        "name"?: string;
+    }
     interface EmpItem {
-        "iconPosition"?: string;
         "label"?: string;
+        "pos"?: string;
     }
     interface SideMenu {
         "avatar"?: string;
-        "title"?: string;
+        "menu"?: string;
     }
     interface IntrinsicElements {
+        "emp-credits": EmpCredits;
         "emp-item": EmpItem;
         "side-menu": SideMenu;
     }
@@ -51,6 +65,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emp-credits": LocalJSX.EmpCredits & JSXBase.HTMLAttributes<HTMLEmpCreditsElement>;
             "emp-item": LocalJSX.EmpItem & JSXBase.HTMLAttributes<HTMLEmpItemElement>;
             "side-menu": LocalJSX.SideMenu & JSXBase.HTMLAttributes<HTMLSideMenuElement>;
         }

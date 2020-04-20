@@ -2,23 +2,27 @@
   display: block;
 }
 
-div {
-  margin-top: 20px;
+.item {
   padding-left:10px;
   display: inline-flex;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  width:80%;
+  border-bottom: 1px solid #CCC;
 }
 
 ::slotted(img) {
   max-width: 20px;
   margin-left: 0;
-  margin-right: auto;
   display: block;
+  padding-right: 10px;
 }
 
-.left {
-  margin: 0 auto;
+.left{
+  float:left;
+  padding-left:10px;
 }
-
-.right {
-  margin: auto 0;
+.right{
+  float:right;
+  padding-right:10px;
 }

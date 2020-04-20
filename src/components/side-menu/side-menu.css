@@ -13,6 +13,8 @@
 .menu-title {
   color: #EEE;
   font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -29,4 +31,8 @@
 .menu-items {
   color: #CCCCCC;
   list-style: none;
+}
+
+.down {
+  bottom: 0;
 }
